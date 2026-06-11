@@ -1,0 +1,390 @@
+/* ============================================================
+   Qing Pu Elementary School — English Website
+   home.css  |  Page-specific styles for index.html
+   ============================================================ */
+
+
+/* ── HERO ── */
+.hero {
+    position: relative;
+    background: var(--navy);
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Subtle diagonal grid background */
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+  
+  /* Dark gradient overlay — fades grid toward bottom */
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(26,79,122,0.5) 100%);
+    pointer-events: none;
+  }
+  
+  .hero__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--sp-8);
+    padding-bottom: var(--sp-8);
+    gap: var(--sp-7);
+  }
+  
+  .hero__content {
+    max-width: 560px;
+  }
+  
+  .hero__title {
+    color: #fff;
+    font-size: clamp(36px, 5.5vw, 60px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: var(--sp-5);
+  }
+  
+  .hero__title-accent {
+    color: var(--orange);
+  }
+  
+  .hero__desc {
+    color: rgba(255,255,255,0.70);
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: var(--sp-6);
+    max-width: 440px;
+  }
+  
+  .hero__actions {
+    display: flex;
+    gap: var(--sp-3);
+    flex-wrap: wrap;
+  }
+  
+  /* Decorative paper-plane SVG */
+  .hero__deco {
+    flex-shrink: 0;
+    opacity: 0.4;
+  }
+  
+  .hero__plane {
+    width: 180px;
+    height: 180px;
+  }
+  
+  
+  /* ── STATS STRIP ── */
+  .stats-strip {
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .stats-strip__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .stats-strip__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--sp-5) var(--sp-3);
+    border-right: 1px solid var(--border);
+    text-align: center;
+  }
+  
+  .stats-strip__item:last-child {
+    border-right: none;
+  }
+  
+  .stats-strip__num {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  
+  .stats-strip__label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  
+  
+  /* ── NEWS CARDS ── */
+  .news-grid {
+    align-items: stretch;
+  }
+  
+  .news-grid .card {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .news-grid .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .news-card__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: var(--sp-2);
+    line-height: 1.4;
+  }
+  
+  .news-card__excerpt {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    flex: 1;
+    margin-bottom: var(--sp-4);
+  }
+  
+  .news-card__link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    transition: color var(--t-fast);
+    margin-top: auto;
+  }
+  
+  .news-card__link:hover {
+    color: var(--orange);
+  }
+  
+  
+  /* ── BILINGUAL PROGRAMS ── */
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: var(--sp-5);
+  }
+  
+  .program-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow var(--t-base), transform var(--t-base);
+  }
+  
+  .program-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  
+  /* Colored top accent bar — each card different */
+  .program-card:nth-child(1) { border-top: 4px solid var(--orange); }
+  .program-card:nth-child(2) { border-top: 4px solid var(--green); }
+  .program-card:nth-child(3) { border-top: 4px solid var(--purple); }
+  
+  .program-card__grade {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: var(--sp-3);
+  }
+  
+  .program-card:nth-child(1) .program-card__grade { color: var(--orange-dark); }
+  .program-card:nth-child(2) .program-card__grade { color: #1a6b4f; }
+  .program-card:nth-child(3) .program-card__grade { color: #4840a8; }
+  
+  .program-card__title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: var(--sp-3);
+  }
+  
+  .program-card__desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: var(--sp-4);
+    line-height: 1.65;
+  }
+  
+  .program-card__subjects {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+  }
+  
+  .program-card__subjects li {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding-left: var(--sp-4);
+    position: relative;
+  }
+  
+  .program-card__subjects li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  
+  .program-card:nth-child(1) .program-card__subjects li::before { color: var(--orange); }
+  .program-card:nth-child(2) .program-card__subjects li::before { color: var(--green); }
+  .program-card:nth-child(3) .program-card__subjects li::before { color: var(--purple); }
+  
+  
+  /* ── JOURNAL BANNER ── */
+  .journal-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-6);
+    padding-top: var(--sp-7);
+    padding-bottom: var(--sp-7);
+  }
+  
+  .journal-banner__text {
+    max-width: 560px;
+  }
+  
+  .journal-banner__deco {
+    font-size: 72px;
+    opacity: 0.15;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  
+  
+  /* ── NEARBY HIGHLIGHTS ── */
+  .nearby-grid {
+    gap: var(--sp-4);
+  }
+  
+  .nearby-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-5);
+    text-align: center;
+    transition: box-shadow var(--t-base), transform var(--t-base);
+  }
+  
+  .nearby-card:hover {
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+  }
+  
+  .nearby-card__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 auto var(--sp-3);
+  }
+  
+  .nearby-card h4 {
+    font-size: 15px;
+    color: var(--navy);
+    margin-bottom: var(--sp-1);
+  }
+  
+  .nearby-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+  
+  
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .programs-grid {
+      grid-template-columns: 1fr;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+    }
+  
+    .hero__inner {
+      flex-direction: column;
+      padding-top: var(--sp-7);
+      padding-bottom: var(--sp-7);
+    }
+  
+    .hero__deco {
+      display: none;
+    }
+  
+    .hero__title {
+      font-size: clamp(32px, 8vw, 44px);
+    }
+  
+    .stats-strip__list {
+      flex-wrap: wrap;
+    }
+  
+    .stats-strip__item {
+      flex: 1 1 50%;
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .stats-strip__item:nth-child(odd) {
+      border-right: 1px solid var(--border);
+    }
+  
+    .stats-strip__item:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+  
+    .journal-banner {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .journal-banner__deco {
+      display: none;
+    }
+  
+    .nearby-grid {
+      grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nearby-grid {
+      grid-template-columns: 1fr;
+    }
+  }
