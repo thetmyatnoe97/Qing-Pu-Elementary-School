@@ -3,23 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qing Pu Elementary School</title>
+  <meta name="description" content="News and events from Qing Pu Elementary School — announcements, awards, field trips, and school activities.">
+  <title>News &amp; Events — Qing Pu Elementary School</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/pages/home.css">
+  <link rel="stylesheet" href="css/pages/about.css">
+  <link rel="stylesheet" href="css/pages/news.css">
 </head>
 <body>
 
-  <nav class="navbar">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" aria-label="Main navigation">
     <div class="container navbar__inner">
-      <a href="index.html" class="navbar__logo">
-        <img src="images/logo.png" alt="Qing Pu logo" width="36" height="36">
-        <div>
+      <a href="index.html" class="navbar__logo" aria-label="Qing Pu Elementary School — home">
+        <div class="navbar__logo-img" aria-hidden="true"><img src="images/logo.png" alt=""></div>
+        <div class="navbar__logo-text">
           <span class="navbar__name">Qing Pu Elementary School</span>
-          <span class="navbar__sub">青埔國小 · Taoyuan</span>
+          <span class="navbar__sub">青埔國小 · Taoyuan, Taiwan</span>
         </div>
       </a>
-      <button class="navbar__toggle" aria-label="Open menu">&#9776;</button>
-      <ul class="navbar__links">
+      <ul class="navbar__links" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="bilingual.html">Bilingual</a></li>
@@ -28,11 +32,453 @@
         <li><a href="visit.html">Visit</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a href="https://www.cpps.tyc.edu.tw" class="btn-lang">中文</a>
+      <a href="https://www.cpps.tyc.edu.tw" target="_blank" rel="noopener" class="navbar__lang" aria-label="Switch to Chinese website">🇹🇼 中文</a>
+      <button class="navbar__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="navbar__mobile" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="bilingual.html">Bilingual education</a>
+      <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="visit.html">Visit us</a>
+      <a href="contact.html">Contact</a>
+      <div class="navbar__mobile-lang">
+        <a href="https://www.cpps.tyc.edu.tw" target="_blank" rel="noopener">🇹🇼 View Chinese website →</a>
+      </div>
     </div>
   </nav>
 
-  <!-- page content goes here -->
+
+  <main id="main">
+
+    <!-- ============================================================
+         PAGE HERO
+         ============================================================ -->
+    <section class="page-hero" aria-label="News and events">
+      <div class="container page-hero__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">News &amp; events</span>
+        </nav>
+        <h1 class="page-hero__title">News &amp; events</h1>
+        <p class="page-hero__desc">
+          Announcements, awards, field trips, and highlights from our school community —
+          written in English for families and visitors around the world.
+        </p>
+      </div>
+      <div class="page-hero__wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="var(--bg)"/>
+        </svg>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         MAIN CONTENT — two-column layout: articles + sidebar
+         ============================================================ -->
+    <section class="section" aria-label="News articles">
+      <div class="container news-layout">
+
+        <!-- ── LEFT: filter tabs + article grid ── -->
+        <div class="news-main">
+
+          <!-- Filter tabs -->
+          <div class="filter-bar" role="tablist" aria-label="Filter news by category">
+            <button class="filter-btn active" role="tab" aria-selected="true"  data-filter="all"         >All</button>
+            <button class="filter-btn"        role="tab" aria-selected="false" data-filter="event"       >🗓 Events</button>
+            <button class="filter-btn"        role="tab" aria-selected="false" data-filter="award"       >🏆 Awards</button>
+            <button class="filter-btn"        role="tab" aria-selected="false" data-filter="announcement">📢 Announcements</button>
+            <button class="filter-btn"        role="tab" aria-selected="false" data-filter="fieldtrip"   >🚌 Field trips</button>
+            <button class="filter-btn"        role="tab" aria-selected="false" data-filter="bilingual"   >🌐 Bilingual</button>
+          </div>
+
+          <!-- Result count -->
+          <p class="news-count" aria-live="polite" aria-atomic="true">
+            Showing <strong class="news-count__num">9</strong> articles
+          </p>
+
+          <!-- ── FEATURED ARTICLE ── -->
+          <article class="news-featured fade-in" data-category="event">
+            <div class="news-featured__img" aria-hidden="true">
+              <!-- Replace with: <img src="images/events/showcase-2026.jpg" alt="Students presenting at the international showcase"> -->
+              <div class="news-img-placeholder">🌍</div>
+            </div>
+            <div class="news-featured__body">
+              <div class="news-featured__meta">
+                <span class="badge badge-orange">Event</span>
+                <time class="news-date" datetime="2026-06-05">June 5, 2026</time>
+              </div>
+              <h2 class="news-featured__title">
+                End-of-year International Education Showcase — Grades 4–6
+              </h2>
+              <p class="news-featured__excerpt">
+                On the last Friday of the school year, our Grade 4 to 6 students opened their
+                classrooms to families for the annual International Education Showcase. Each class
+                presented a bilingual project — from poster boards on global water access to short
+                documentary films about Taoyuan's international transport links. The hall was packed,
+                the English was impressive, and the pride on every student's face said it all.
+              </p>
+              <div class="news-featured__footer">
+                <a href="news-article.html" class="btn btn-secondary btn-sm">Read full article</a>
+                <span class="text-sm text-muted">5 min read · International Education</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── ARTICLE GRID ── -->
+          <div class="news-grid" role="list" aria-label="News articles">
+
+            <article class="news-card fade-in" data-category="award" role="listitem">
+              <div class="news-card__img" aria-hidden="true">
+                <div class="news-img-placeholder">🏆</div>
+              </div>
+              <div class="news-card__body">
+                <div class="news-card__meta">
+                  <span class="badge badge-green">Award</span>
+                  <time class="news-date" datetime="2026-05-18">May 18, 2026</time>
+                </div>
+                <h3 class="news-card__title">Three prizes at Taoyuan Bilingual Science Competition</h3>
+                <p class="news-card__excerpt">Our Grade 5 and 6 science teams brought home a gold, silver, and special jury prize — presenting their research entirely in English.</p>
+                <a href="#" class="news-card__link">Read more →</a>
+              </div>
+            </article>
+
+            <article class="news-card fade-in" data-category="fieldtrip" role="listitem">
+              <div class="news-card__img" aria-hidden="true">
+                <div class="news-img-placeholder">🚇</div>
+              </div>
+              <div class="news-card__body">
+                <div class="news-card__meta">
+                  <span class="badge badge-purple">Field trip</span>
+                  <time class="news-date" datetime="2026-04-22">Apr 22, 2026</time>
+                </div>
+                <h3 class="news-card__title">Grade 3 explores the Airport MRT — in English</h3>
+                <p class="news-card__excerpt">Students navigated Taoyuan Airport MRT from A18 to A1, asking staff questions in English and writing bilingual travel journals on the way back.</p>
+                <a href="#" class="news-card__link">Read more →</a>
+              </div>
+            </article>
+
+            <article class="news-card fade-in" data-category="bilingual" role="listitem">
+              <div class="news-card__img" aria-hidden="true">
+                <div class="news-img-placeholder">📖</div>
+              </div>
+              <div class="news-card__body">
+                <div class="news-card__meta">
+                  <span class="badge badge-navy">Bilingual</span>
+                  <time class="news-date" datetime="2026-04-10">Apr 10, 2026</time>
+                </div>
+                <h3 class="news-card__title">New English journal issue — Semester 2, 2026</h3>
+                <p class="news-card__excerpt">The latest school journal features eight student articles in English — science reports, poems, and reflections from both Grade 5 and 6 classes.</p>
+                <a href="#" class="news-card__link">Read more →</a>
+              </div>
+            </article>
+
+            <article class="news-card fade-in" data-category="event" role="listitem">
+              <div class="news-card__img" aria-hidden="true">
+                <div class="news-img-placeholder">🌱</div>
+              </div>
+              <div class="news-card__body">
+                <div class="news-card__meta">
+                  <span class="badge badge-orange">Event</span>
+                  <time class="news-date" datetime="2026-03-15">Mar 15, 2026</time>
+                </div>
+                <h3 class="news-card__title">Earth Day science fair — Grade 5 presents research</h3>
+                <p class="news-card__excerpt">Twelve Grade 5 student teams set up experiment stations in the gym, presenting their findings on plant growth, water quality, and solar energy in bilingual poster sessions.</p>
+                <a href="#" class="news-card__link">Read more →</a>
+              </div>
+            </article>
+
+            <article class="news-card fade-in" data-category="announcement" role="listitem">
+              <div class="news-card__img" aria-hidden="true">
+                <div class="news-img-placeholder">📅</div>
+              </div>
+              <div class="news-card__body">
+                <div class="news-card__meta">
+                  <span class="badge badge-gray">Announcement</span>
+                  <time class="news-date" datetime="2026-03-01">Mar 1, 2026</time>
+                </div>
+                <h3 class="news-card__title">Semester 2 begins — welcome back</h3>
+                <p class="news-card__excerpt">Semester 2 of the 2025–2026 school year opens today. New bilingual units, an updated school calendar, and a welcome message from the principal.</p>
+                <a href="#" class="news-card__link">Read more →</a>
+              </div>
+            </article>
+
+            <article class="news-card fade-in" data-category="award" role="listitem">
+              <div class="news-card__img" aria-hidden="true">
+                <div class="news-img-placeholder">⭐</div>
+              </div>
+              <div class="news-card__body">
+                <div class="news-card__meta">
+                  <span class="badge badge-green">Award</span>
+                  <time class="news-date" datetime="2026-01-20">Jan 20, 2026</time>
+                </div>
+                <h3 class="news-card__title">Qing Pu recognised as Taoyuan Bilingual Model School</h3>
+                <p class="news-card__excerpt">The Taoyuan City Education Bureau named us one of twelve model bilingual schools in the district for 2025–2026, recognising our curriculum design and student outcomes.</p>
+                <a href="#" class="news-card__link">Read more →</a>
+              </div>
+            </article>
+
+            <article class="news-card fade-in" data-category="fieldtrip" role="listitem">
+              <div class="news-card__img" aria-hidden="true">
+                <div class="news-img-placeholder">🎨</div>
+              </div>
+              <div class="news-card__body">
+                <div class="news-card__meta">
+                  <span class="badge badge-purple">Field trip</span>
+                  <time class="news-date" datetime="2025-11-08">Nov 8, 2025</time>
+                </div>
+                <h3 class="news-card__title">Grade 4 visits Taoyuan Museum of Art</h3>
+                <p class="news-card__excerpt">A five-minute walk from school led Grade 4 students to the Taoyuan Museum of Art for a guided tour conducted in English by museum educators.</p>
+                <a href="#" class="news-card__link">Read more →</a>
+              </div>
+            </article>
+
+            <article class="news-card fade-in" data-category="bilingual" role="listitem">
+              <div class="news-card__img" aria-hidden="true">
+                <div class="news-img-placeholder">🔬</div>
+              </div>
+              <div class="news-card__body">
+                <div class="news-card__meta">
+                  <span class="badge badge-navy">Bilingual</span>
+                  <time class="news-date" datetime="2025-10-14">Oct 14, 2025</time>
+                </div>
+                <h3 class="news-card__title">International Science Week — Semester 1</h3>
+                <p class="news-card__excerpt">A week of English-medium science lessons, experiments, and a guest speaker from National Central University explored the theme: "Our Planet, Our Responsibility."</p>
+                <a href="#" class="news-card__link">Read more →</a>
+              </div>
+            </article>
+
+            <article class="news-card fade-in" data-category="announcement" role="listitem">
+              <div class="news-card__img" aria-hidden="true">
+                <div class="news-img-placeholder">🏫</div>
+              </div>
+              <div class="news-card__body">
+                <div class="news-card__meta">
+                  <span class="badge badge-gray">Announcement</span>
+                  <time class="news-date" datetime="2025-09-01">Sep 1, 2025</time>
+                </div>
+                <h3 class="news-card__title">New school year opens — welcome to 2025–2026</h3>
+                <p class="news-card__excerpt">The 2025–2026 school year begins with 18 classes, an expanded bilingual programme in Grade 5–6, and three new certified bilingual subject teachers joining the team.</p>
+                <a href="#" class="news-card__link">Read more →</a>
+              </div>
+            </article>
+
+          </div><!-- end .news-grid -->
+
+          <!-- Empty state — shown by JS when no results match filter -->
+          <div class="news-empty" aria-live="polite" hidden>
+            <div class="news-empty__icon" aria-hidden="true">📭</div>
+            <h3>No articles in this category yet</h3>
+            <p>Check back soon, or <a href="#" data-filter="all" class="filter-reset-link">view all news</a>.</p>
+          </div>
+
+          <!-- Pagination -->
+          <nav class="pagination" aria-label="News pages">
+            <a href="#" class="pagination__btn pagination__btn--prev" aria-label="Previous page" aria-disabled="true">← Newer</a>
+            <div class="pagination__pages">
+              <a href="#" class="pagination__page active" aria-current="page" aria-label="Page 1">1</a>
+              <a href="#" class="pagination__page" aria-label="Page 2">2</a>
+              <a href="#" class="pagination__page" aria-label="Page 3">3</a>
+              <span class="pagination__ellipsis" aria-hidden="true">…</span>
+              <a href="#" class="pagination__page" aria-label="Page 6">6</a>
+            </div>
+            <a href="#" class="pagination__btn pagination__btn--next" aria-label="Next page">Older →</a>
+          </nav>
+
+          <p class="news-chinese-note">
+            📌 This page covers selected news in English. For the complete school news archive in Chinese,
+            visit the <a href="https://www.cpps.tyc.edu.tw" target="_blank" rel="noopener">main school website →</a>
+          </p>
+
+        </div><!-- end .news-main -->
+
+
+        <!-- ── RIGHT: sidebar ── -->
+        <aside class="news-sidebar" aria-label="News sidebar">
+
+          <!-- Search -->
+          <div class="sidebar-widget">
+            <h3 class="sidebar-widget__title">Search news</h3>
+            <div class="search-box" role="search">
+              <label for="news-search" class="sr-only">Search articles</label>
+              <input
+                type="search"
+                id="news-search"
+                class="search-box__input"
+                placeholder="e.g. science fair, field trip…"
+                aria-label="Search news articles"
+              >
+              <button class="search-box__btn" aria-label="Submit search">🔍</button>
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div class="sidebar-widget">
+            <h3 class="sidebar-widget__title">Categories</h3>
+            <ul class="category-list" role="list">
+              <li>
+                <button class="category-list__item" data-filter="all">
+                  <span>All articles</span>
+                  <span class="category-list__count">9</span>
+                </button>
+              </li>
+              <li>
+                <button class="category-list__item" data-filter="event">
+                  <span>🗓 Events</span>
+                  <span class="category-list__count">2</span>
+                </button>
+              </li>
+              <li>
+                <button class="category-list__item" data-filter="award">
+                  <span>🏆 Awards</span>
+                  <span class="category-list__count">2</span>
+                </button>
+              </li>
+              <li>
+                <button class="category-list__item" data-filter="announcement">
+                  <span>📢 Announcements</span>
+                  <span class="category-list__count">2</span>
+                </button>
+              </li>
+              <li>
+                <button class="category-list__item" data-filter="fieldtrip">
+                  <span>🚌 Field trips</span>
+                  <span class="category-list__count">2</span>
+                </button>
+              </li>
+              <li>
+                <button class="category-list__item" data-filter="bilingual">
+                  <span>🌐 Bilingual</span>
+                  <span class="category-list__count">2</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Recent posts -->
+          <div class="sidebar-widget">
+            <h3 class="sidebar-widget__title">Recent articles</h3>
+            <ul class="recent-list" role="list">
+              <li class="recent-item">
+                <time class="recent-item__date" datetime="2026-06-05">Jun 5, 2026</time>
+                <a href="#" class="recent-item__title">End-of-year International Education Showcase</a>
+              </li>
+              <li class="recent-item">
+                <time class="recent-item__date" datetime="2026-05-18">May 18, 2026</time>
+                <a href="#" class="recent-item__title">Three prizes at Bilingual Science Competition</a>
+              </li>
+              <li class="recent-item">
+                <time class="recent-item__date" datetime="2026-04-22">Apr 22, 2026</time>
+                <a href="#" class="recent-item__title">Grade 3 explores Airport MRT in English</a>
+              </li>
+              <li class="recent-item">
+                <time class="recent-item__date" datetime="2026-04-10">Apr 10, 2026</time>
+                <a href="#" class="recent-item__title">New English journal issue — Semester 2</a>
+              </li>
+              <li class="recent-item">
+                <time class="recent-item__date" datetime="2026-03-15">Mar 15, 2026</time>
+                <a href="#" class="recent-item__title">Earth Day science fair — Grade 5</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Archive by year -->
+          <div class="sidebar-widget">
+            <h3 class="sidebar-widget__title">Archive</h3>
+            <ul class="archive-list" role="list">
+              <li><a href="#" class="archive-list__item"><span>2025–2026</span><span class="category-list__count">9</span></a></li>
+              <li><a href="#" class="archive-list__item"><span>2024–2025</span><span class="category-list__count">14</span></a></li>
+              <li><a href="#" class="archive-list__item"><span>2023–2024</span><span class="category-list__count">11</span></a></li>
+            </ul>
+          </div>
+
+          <!-- Quick links -->
+          <div class="sidebar-widget sidebar-widget--cta">
+            <p class="text-sm" style="color:rgba(255,255,255,0.75); margin-bottom: var(--sp-3);">
+              Want to read everything in Chinese too?
+            </p>
+            <a href="https://www.cpps.tyc.edu.tw" target="_blank" rel="noopener" class="btn btn-ghost" style="width:100%; justify-content:center;">
+              Visit main school site 🇹🇼
+            </a>
+          </div>
+
+        </aside>
+
+      </div><!-- end .news-layout -->
+    </section>
+
+  </main>
+
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <div class="footer__logo-box" aria-hidden="true"><img src="images/logo.png" alt=""></div>
+            <div>
+              <div class="footer__school-name">Qing Pu Elementary School</div>
+              <div class="footer__school-zh">桃園市中壢區青埔國民小學</div>
+            </div>
+          </div>
+          <p class="footer__desc">A bilingual elementary school in Taoyuan, Taiwan. Inspiring hope, happiness, and a sense of achievement in every student since 1946.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Pages</p>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About the school</a></li>
+            <li><a href="bilingual.html">Bilingual education</a></li>
+            <li><a href="news.html">News &amp; events</a></li>
+            <li><a href="gallery.html">Photo gallery</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">More</p>
+          <ul class="footer__links">
+            <li><a href="visit.html">Visit us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://www.cpps.tyc.edu.tw" target="_blank" rel="noopener">Main website (中文)</a></li>
+            <li><a href="http://163.30.130.236/bilingual/index.php" target="_blank" rel="noopener">Bilingual site</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Contact</p>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">📍</span>
+            <span>No. 122, Sec. 2, Qingpu Rd., Zhongli Dist., Taoyuan City 320</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">📞</span>
+            <span>(03) 287-3838</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">🕘</span>
+            <span>Mon–Fri · 07:30–17:00</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">✉️</span>
+            <span>cpps@ms.tyc.edu.tw</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Qing Pu Elementary School · Taoyuan, Taiwan · All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Sitemap</a>
+          <a href="https://www.cpps.tyc.edu.tw" target="_blank" rel="noopener">中文網站</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 
 </body>
 </html>
